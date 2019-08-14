@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
 export default () => {
   const handleLambda = async () => {
-    let response = await fetch('/.netlify/functions/chrome')
+    let response = await fetch('/.netlify/functions/return42')
     response = await response.json();
     console.log(response);
   }

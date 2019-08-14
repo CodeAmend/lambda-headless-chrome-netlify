@@ -4,13 +4,17 @@
   "description": "Learning to get chrome headless working",
   "main": "index.js",
   "scripts": {
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "start": "npm run develop",
-    "zip": "cd src/lambda-functions/chrome && npm i && chmod -R 777 node_modules && zip -r chrome.zip *",
+    "prestart": "npm run zip",
+    "start": "run-p start:**",
+    "start:app": "gatsby develop",
+    "start:lambda": "netlify-lambda serve src/lambda",
     "prezip": "rm -rf functions-build && mkdir functions-build",
+    "zip": "cd src/lambda-functions/chrome && npm i && chmod -R 777 node_modules && zip -r chrome.zip *",
     "postzip": "mv src/lambda-functions/chrome/chrome.zip functions-build",
-    "prebuild": "npm run zip"
+    "prebuild": "npm run zip",
+    "build": "run-p build:**",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/lambda"
   },
   "repository": {
     "type": "git",
