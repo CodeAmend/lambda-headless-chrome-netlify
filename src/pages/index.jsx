@@ -10,11 +10,11 @@ const Wrapper = styled.div`
 `;
 
 export default () => {
-  const handleLambda = () => {
+  const handleLambda = async () => {
     console.log("HANDLE LAMBDA");
-    fetch('/.netlify/functions/first-func')
-      .then(res => res.json())
-      .then(console.log);
+    let response = await fetch('/.netlify/functions/first-func')
+    response = await response.json();
+    console.log(response);
   }
   return (
     <Wrapper>
