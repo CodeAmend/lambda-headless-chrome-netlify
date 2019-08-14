@@ -1,0 +1,21 @@
+{
+  "name": "lambda-headless-chrome-netlify",
+  "version": "1.0.0",
+  "description": "Learning to get chrome headless working",
+  "main": "index.js",
+  "scripts": {
+    "start": "gatsby develop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeAmend/lambda-headless-chrome-netlify"
+  },
+  "author": "Michael Bruce Allen",
+  "license": "ISC",
+  "homepage": "https://github.com/CodeAmend/lambda-headless-chrome-netlify#readme",
+  "dependencies": {
+    "gatsby": "^2.13.62",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
