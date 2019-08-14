@@ -12,6 +12,9 @@ const Wrapper = styled.div`
 export default () => {
   const handleLambda = () => {
     console.log("HANDLE LAMBDA");
+    fetch('/.netlify/functions/first-func')
+      .then(res => res.json())
+      .then(console.log);
   }
   return (
     <Wrapper>
