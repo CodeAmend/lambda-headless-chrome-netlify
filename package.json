@@ -9,8 +9,7 @@
     "start": "npm run develop",
     "zip": "cd src/lambda-functions/chrome && npm i && chmod -R 777 node_modules && zip -r chrome.zip *",
     "prezip": "rm -rf functions-build && mkdir functions-build",
-    "postzip": "mv src/lambda-functions/chrome/chrome.zip functions-build",
-    "prebuild": "npm run zip"
+    "postzip": "mv src/lambda-functions/chrome/chrome.zip functions-build"
   },
   "repository": {
     "type": "git",
