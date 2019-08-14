@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "develop": "gatsby develop",
-    "start": "run-p start:**",
-    "start:app": "npm run develop",
-    "start:lambda": "netlify-lambda serve src/lambda-functions",
-    "build": "run-p build:**",
-    "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda-functions"
+    "build": "gatsby build",
+    "start": "npm run develop",
+    "zip": "cd src/lambda-functions/chrome && npm i && chmod -R 777 node_modules && zip -r chrome.zip *",
+    "prezip": "rm -rf functions-build && mkdir functions-build",
+    "postzip": "mv src/lambda-functions/chrome/chrome.zip functions-build",
+    "prebuild": "npm run zip"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   "license": "ISC",
   "homepage": "https://github.com/CodeAmend/lambda-headless-chrome-netlify#readme",
   "dependencies": {
+    "chrome-aws-lambda": "^1.19.0",
     "gatsby": "^2.13.62",
+    "puppeteer-core": "^1.19.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "styled-components": "^4.3.2"
