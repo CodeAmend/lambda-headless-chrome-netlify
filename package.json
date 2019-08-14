@@ -12,9 +12,8 @@
     "zip": "cd src/lambda-functions && npm i && chmod -R 777 node_modules && zip -r chrome.zip *",
     "postzip": "mv src/lambda-functions/chrome.zip functions-build",
     "prebuild": "npm run zip",
-    "build": "run-p build:**",
-    "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda-functions"
+    "build": "gatsby build",
+    "prebuild": "npm run zip"
   },
   "repository": {
     "type": "git",
