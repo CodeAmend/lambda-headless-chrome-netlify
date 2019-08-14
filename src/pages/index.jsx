@@ -11,13 +11,8 @@ const Wrapper = styled.div`
 
 export default () => {
   const handleLambda = async () => {
-    console.log("CHROME");
-    let response = await fetch('/.netlify/functions/chrome')
-    response = await response.json();
-    console.log(response);
-
     console.log("HEADLESS CHROME");
-    response = await fetch('/.netlify/functions/headless-chrome')
+    let response = await fetch('/.netlify/functions/headless-chrome')
     response = await response.json();
     console.log(response);
   }
