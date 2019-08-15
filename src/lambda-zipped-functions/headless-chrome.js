@@ -3,7 +3,8 @@ const fs = require('fs');
  
 
 exports.handler = async (event, context, callback) => {
-  let result = null;
+  let result1 = null;
+  let result2 = null;
   let browser = null;
   const dirname = __dirname;
   const cwd = process.cwd();
@@ -26,9 +27,12 @@ exports.handler = async (event, context, callback) => {
 
     let page = await browser.newPage();
  
-    await page.setContent(__dirname + '/index.html');
+    await page.goto(__dirname + '/index.html');
  
-    result = await page.title();
+    result1 = await page.title();
+
+    await page.goto('file://' + __dirname + '/index.html');
+    result2 = await page.title();
 
   } catch (error) {
     callback(null, {
@@ -42,7 +46,8 @@ exports.handler = async (event, context, callback) => {
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({
-        title: result,
+        result1,
+        result2,
         cwd,
         PWD,
         dirname,
