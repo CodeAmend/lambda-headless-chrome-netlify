@@ -27,9 +27,9 @@ exports.handler = async (event, context, callback) => {
 
     let page = await browser.newPage();
  
-    await page.goto(__dirname + '/index.html');
+    // await page.goto(__dirname + '/index.html');
  
-    result1 = await page.title();
+    // result1 = await page.title();
 
     await page.goto('file://' + __dirname + '/index.html');
     result2 = await page.title();
