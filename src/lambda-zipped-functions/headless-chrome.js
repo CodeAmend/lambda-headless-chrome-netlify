@@ -5,7 +5,7 @@ exports.handler = async (event, context, callback) => {
   let result = null;
   let browser = null;
   const dirname = __dirname;
-  const pwd = process.pwd();
+  const cwd = process.cwd();
   const PWD = process.PWD;
  
   try {
@@ -35,7 +35,7 @@ exports.handler = async (event, context, callback) => {
       statusCode: 200,
       body: JSON.stringify({
         title: result,
-        pwd,
+        cwd,
         PWD,
         dirname,
       })
