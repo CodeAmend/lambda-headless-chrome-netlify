@@ -20,7 +20,7 @@ exports.handler = async (event, context, callback) => {
 
     fs.readdir(__dirname, function(err, items) {
       for (var i=0; i<items.length; i++) {
-        fileList.push(items[i])
+        fileList.push(items[i]);
       }
     });
 
@@ -46,7 +46,7 @@ exports.handler = async (event, context, callback) => {
         cwd,
         PWD,
         dirname,
-        fileList: fileList.join();
+        fileList: fileList.join(),
       })
     })
   }
