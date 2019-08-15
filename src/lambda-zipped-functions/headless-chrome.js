@@ -1,4 +1,5 @@
 const chromium = require('chrome-aws-lambda');
+const fs = require('fs');
  
 
 exports.handler = async (event, context, callback) => {
@@ -7,6 +8,7 @@ exports.handler = async (event, context, callback) => {
   const dirname = __dirname;
   const cwd = process.cwd();
   const PWD = process.PWD;
+  let fileList = [];
  
   try {
     browser = await chromium.puppeteer.launch({
@@ -15,7 +17,13 @@ exports.handler = async (event, context, callback) => {
       executablePath: await chromium.executablePath,
       headless: chromium.headless,
     });
- 
+
+    fs.readdir(__dirname, function(err, items) {
+      for (var i=0; i<items.length; i++) {
+        fileList.push(items[i])
+      }
+    });
+
     let page = await browser.newPage();
  
     await page.setContent(__dirname + '/index.html');
@@ -38,6 +46,7 @@ exports.handler = async (event, context, callback) => {
         cwd,
         PWD,
         dirname,
+        fileList: fileList.join();
       })
     })
   }
