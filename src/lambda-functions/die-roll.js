@@ -1,5 +1,6 @@
 exports.handler = (event, context, callback) => {
-  const { sides } = event.queryStringParameter;
+  const { sides } = event.queryStringParameters;
+
   const rollValue = Math.floor(Math.random() * (sides || 6));
 
   callback(null, {

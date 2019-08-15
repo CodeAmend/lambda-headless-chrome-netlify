@@ -11,7 +11,8 @@ const Wrapper = styled.div`
 
 export default () => {
   const handleLambda = async () => {
-    let response = await fetch('/.netlify/functions/die-roll');
+    const sides = 12;
+    let response = await fetch(`/.netlify/functions/die-roll?sides=${sides}`);
     response = await response.json();
     console.log(response);
 
