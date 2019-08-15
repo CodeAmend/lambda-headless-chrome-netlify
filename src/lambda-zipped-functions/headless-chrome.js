@@ -15,7 +15,7 @@ exports.handler = async (event, context, callback) => {
  
     let page = await browser.newPage();
  
-    await page.goto(event.url || 'https://example.com');
+    await page.setContent('./index.html');
  
     result = await page.title();
 
