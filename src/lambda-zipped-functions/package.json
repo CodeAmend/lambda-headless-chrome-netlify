@@ -1,0 +1,8 @@
+{
+  "name": "lambda-zipped-functions",
+  "version": "1.0.0",
+  "main": "zippsta.js",
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
+}
