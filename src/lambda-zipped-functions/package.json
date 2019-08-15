@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "zippsta.js",
   "dependencies": {
-    "faker": "^4.1.0"
+    "chrome-aws-lambda": "^1.19.0",
+    "puppeteer-core": "^1.19.0"
   }
 }

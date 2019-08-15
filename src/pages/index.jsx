@@ -11,11 +11,11 @@ const Wrapper = styled.div`
 
 export default () => {
   const handleLambda = async () => {
-    let response = await fetch('/.netlify/functions/static-fake')
+    let response = await fetch('/.netlify/functions/die-roll');
     response = await response.json();
     console.log(response);
 
-    response = await fetch('/.netlify/functions/fake')
+    response = await fetch('/.netlify/functions/headless-chrome');
     response = await response.json();
     console.log(response);
   }
