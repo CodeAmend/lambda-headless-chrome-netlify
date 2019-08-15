@@ -4,6 +4,9 @@ const chromium = require('chrome-aws-lambda');
 exports.handler = async (event, context, callback) => {
   let result = null;
   let browser = null;
+  const dirname = __dirname;
+  const pwd = process.pwd();
+  const PWD = process.PWD;
  
   try {
     browser = await chromium.puppeteer.launch({
@@ -32,6 +35,9 @@ exports.handler = async (event, context, callback) => {
       statusCode: 200,
       body: JSON.stringify({
         title: result,
+        pwd,
+        PWD,
+        dirname,
       })
     })
   }
