@@ -30,7 +30,7 @@
   "dependencies": {
     "chrome-aws-lambda": "^1.19.0",
     "faker": "^4.1.0",
-    "gatsby": "^2.13.62",
+    "gatsby": "^2.32.13",
     "mapbox-gl": "^1.2.1",
     "puppeteer-core": "^1.19.0",
     "react": "^16.9.0",
